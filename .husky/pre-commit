@@ -1,0 +1,1 @@
+cd expressapi && npx lint-staged

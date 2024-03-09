@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "simple fullstack demo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olivierHuvelle/ecommerce.git"
+  },
+  "author": "olivierhuvelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olivierHuvelle/ecommerce/issues"
+  },
+  "homepage": "https://github.com/olivierHuvelle/ecommerce#readme",
+  "devDependencies": {
+    "husky": "^9.0.11"
+  }
+}

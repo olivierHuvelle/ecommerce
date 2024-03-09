@@ -1,0 +1,122 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "ecommerce api",
+		"version": "1.0.0",
+		"title": "ECOMMERCE"
+	},
+	"tags": [
+		{
+			"name": "Authentication"
+		},
+		{
+			"name": "Static"
+		}
+	],
+	"securityDefinitions": {
+		"bearer": {
+			"type": "apiKey",
+			"name": "Authorization",
+			"in": "header",
+			"description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
+		}
+	},
+	"parameters": {
+		"Accept-Language": {
+			"name": "Accept-Language",
+			"in": "header",
+			"required": false,
+			"schema": {
+				"type": "string",
+				"enum": ["fr", "en", "de"]
+			},
+			"description": "Sélection de la langue"
+		}
+	},
+	"paths": {
+		"/": {
+			"get": {
+				"summary": "Get root response",
+				"parameters": [{ "$ref": "#/parameters/Accept-Language" }],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"message": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"tags": ["Static"],
+				"description": "Get Root Response"
+			}
+		}
+	},
+	"definitions": {
+		"ErrorResponse": {
+			"type": "object",
+			"required": ["message"],
+			"properties": {
+				"message": {
+					"type": "string"
+				}
+			}
+		},
+		"SuccessResponse": {
+			"type": "object",
+			"properties": {
+				"success": {
+					"type": "boolean",
+					"default": true
+				}
+			}
+		},
+		"TokenResponse": {
+			"type": "object",
+			"properties": {
+				"token": {
+					"type": "string"
+				},
+				"refreshToken": {
+					"type": "string"
+				}
+			}
+		},
+		"UnprocessableEntityResponse": {
+			"type": "object",
+			"required": ["message", "errors"],
+			"properties": {
+				"message": {
+					"type": "string"
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/UnprocessableEntityResponseItem"
+					}
+				}
+			}
+		},
+		"UnprocessableEntityResponseItem": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "string"
+				},
+				"msg": {
+					"type": "string"
+				},
+				"param": {
+					"type": "string"
+				},
+				"location": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

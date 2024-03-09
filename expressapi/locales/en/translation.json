@@ -1,0 +1,6 @@
+{
+	"page_404": "page not found",
+	"page_500": "an error occurred",
+	"page_static_root_hello": "hello world",
+	"configuration_rateLimiter_message": "too many requests"
+}

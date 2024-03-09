@@ -1,0 +1,9 @@
+commit_message=$(cat "$(git rev-parse --git-dir)/COMMIT_EDITMSG")
+branch_name=$(git symbolic-ref --short HEAD)
+
+echo "Commit Message: $commit_message"
+echo "Branch Name: $branch_name"
+
+node "$(dirname "$0")/validate-commit.js" "$branch_name" "$commit_message"
+
+

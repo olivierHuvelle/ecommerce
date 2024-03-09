@@ -1,0 +1,15 @@
+*.md
+!README.md
+
+node_modules
+.idea
+
+.husky/_
+
+expressapi/node_modules
+expressapi/.env
+expressapi/.env.test
+expressapi/.env.dev
+expressapi/key.pem
+expressapi/cert.pem
+expressapi/logs
